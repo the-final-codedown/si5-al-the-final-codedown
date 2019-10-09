@@ -18,4 +18,4 @@ Week 40 : yellow
 ## Week 41
 
 - Deuxième rendu d'un scope fonctionnel plus limité et un scope non fonctionnel plus intéressant pour la mise à l'échelle
-- Création du diagramme de composants, de la roadmap et du plan détaillé
+- Création du diagramme de composants, de séquences et d'interface, de la roadmap et du plan détaillé
