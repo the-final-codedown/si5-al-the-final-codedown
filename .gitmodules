@@ -1,3 +1,21 @@
 [submodule "tfc-transfer-validator"]
 	path = tfc-transfer-validator
 	url = https://github.com/the-final-codedown/tfc-transfer-validator
+[submodule "tfc-cap-updater"]
+	path = tfc-cap-updater
+	url = https://github.com/the-final-codedown/tfc-cap-updater
+[submodule "tfc-cap-reader"]
+	path = tfc-cap-reader
+	url = https://github.com/the-final-codedown/tfc-cap-reader
+[submodule "tfc-savings"]
+	path = tfc-savings
+	url = https://github.com/the-final-codedown/tfc-savings
+[submodule "tfc-profile"]
+	path = tfc-profile
+	url = https://github.com/the-final-codedown/tfc-profile
+[submodule "tfc-account"]
+	path = tfc-account
+	url = https://github.com/the-final-codedown/tfc-account
+[submodule "tfc-rolling-history"]
+	path = tfc-rolling-history
+	url = https://github.com/the-final-codedown/tfc-rolling-history.git
