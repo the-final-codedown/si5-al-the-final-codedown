@@ -1,0 +1,3 @@
+[submodule "tfc-transfer-validator"]
+	path = tfc-transfer-validator
+	url = https://github.com/the-final-codedown/tfc-transfer-validator
