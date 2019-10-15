@@ -2,16 +2,17 @@
 # Status
 </center>
 
-<<<<<<< HEAD
-Week 40 : yellow
-=======
+
+
 ## Health
 
 - Week 42 : yellow
-- Week 41 : green 
-- Week 40 : yellow
->>>>>>> Added deliverables
 
+- Week 41 : green 
+
+- Week 40 : yellow
+
+  
 ## Week 39
 
 - Délimitation du scope
