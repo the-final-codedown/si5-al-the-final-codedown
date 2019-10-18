@@ -61,10 +61,15 @@ Enfin nous avons **Sigmund**, un des gros actionnaires de Créditrama, qui aime 
 ## Use case
 ![](usecase.svg)
 
+
 ## Diagramme de composants
 ![](components.svg)
 
 <div style="page-break-after: always;"></div>
+
+## Diagramme de service
+
+![](service.svg)
 
 
 ## Diagrammes de séquence
