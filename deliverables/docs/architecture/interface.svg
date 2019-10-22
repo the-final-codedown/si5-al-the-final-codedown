@@ -1,5 +1,111 @@
-<<<<<<< HEAD
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1128px" height="367px" version="1.1" style="background-color: rgb(255, 255, 255);"><defs><style type="text/css">ul { margin-top: 0px; margin-bottom: 10px } &#xa;ol { margin-top: 0px; margin-bottom: 10px } &#xa;ul { margin-top: 0px; margin-bottom: 10px } &#xa;ol { margin-top: 0px; margin-bottom: 10px } &#xa;ul { margin-top: 0px; margin-bottom: 10px } &#xa;ol { margin-top: 0px; margin-bottom: 10px } &#xa;</style></defs><g transform="translate(0.5,0.5)"><rect x="529" y="0.5" width="286" height="105" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 529 18.17 L 815 18.17" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="671.5" y="13">Transfer Money</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="535.5" y="32.67">pay(idSource:long,IdDestination:long,amount:int)</text></g><rect x="0" y="1" width="215" height="107" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 0 18.67 L 215 18.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="107" y="13.5">Create Account</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="6.5" y="33.17">create(type:Type)</text></g><rect x="939" y="122" width="186" height="109" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 939 139.67 L 1125 139.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="1031.5" y="134.5">Check cap</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="945.5" y="154.17">getCap(idAccount:long)</text></g><rect x="0" y="250" width="236" height="112" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 0 267.67 L 236 267.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="117.5" y="262.5">Downscale cap</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="6.5" y="282.17">-downscale(idAccount:long,amount:int)</text></g><rect x="318.5" y="122" width="392" height="110" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 318.5 139.67 L 710.5 139.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="514" y="134.5">Save transaction</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="325" y="154.17">addTransaction(amount:int,date:Date,idSource:long,idDestination:long)</text></g><rect x="246" y="1" width="256" height="107" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 246 18.67 L 502 18.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="373.5" y="13.5">View cap</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="252.5" y="33.17">getBankCap(idAccount:long)</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="252.5" y="49.17">getAmount(idAccount:long)</text></g><rect x="720" y="122" width="214" height="107" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 720 139.67 L 934 139.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="826.5" y="134.5">Savings update</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="726.5" y="154.17">addFunds(idAccount:long,amount:int)</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="726.5" y="170.17">getAllSavingsAccounts()</text></g><rect x="835.5" y="1.5" width="285" height="104" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 835.5 19.17 L 1120.5 19.17" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="977.5" y="14">Upscale cap</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="842" y="33.67">upscale(idAccount:long,amount:int)</text></g><rect x="246" y="251" width="333" height="113" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 246 268.67 L 579 268.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="412" y="263.5">View Account</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="252.5" y="283.17">consultAccount(idAccount:long)</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="252.5" y="299.17">getTransactions(idAccount:long)</text></g><rect x="0" y="122" width="313" height="108" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 0 139.67 L 313 139.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="156" y="134.5">Manage profile</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="6.5" y="154.17">createProfile(mail:String,name:String, password:integer)</text></g><rect x="593" y="250" width="519" height="114" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 593 267.67 L 1112 267.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="852" y="262.5">Update History</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="599.5" y="282.17">addTransactionToHistory(amount:int,date:Date,idSource:long,idDestination:long)</text></g></g><g fill="#787878" font-family="Arial,Helvetica" font-size="12px"><text x="6" y="15">Visual Paradigm Online Express Edition</text></g><g fill="#787878" font-family="Arial,Helvetica" text-anchor="end" font-size="12px"><text x="1122" y="360">Visual Paradigm Online Express Edition</text></g></svg>
-=======
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1128px" height="367px" version="1.1" style="background-color: rgb(255, 255, 255);"><defs><style type="text/css">ul { margin-top: 0px; margin-bottom: 10px } &#xa;ol { margin-top: 0px; margin-bottom: 10px } &#xa;ul { margin-top: 0px; margin-bottom: 10px } &#xa;ol { margin-top: 0px; margin-bottom: 10px } &#xa;ul { margin-top: 0px; margin-bottom: 10px } &#xa;ol { margin-top: 0px; margin-bottom: 10px } &#xa;</style></defs><g transform="translate(0.5,0.5)"><rect x="529" y="0.5" width="286" height="105" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 529 18.17 L 815 18.17" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="671.5" y="13">Transfer Money</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="535.5" y="32.67">pay(idSource:long,IdDestination:long,amount:int)</text></g><rect x="0" y="1" width="215" height="107" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 0 18.67 L 215 18.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="107" y="13.5">Create Account</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="6.5" y="33.17">create(type:Type)</text></g><rect x="939" y="122" width="186" height="109" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 939 139.67 L 1125 139.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="1031.5" y="134.5">Check cap</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="945.5" y="154.17">getCap(idAccount:long)</text></g><rect x="0" y="250" width="236" height="112" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 0 267.67 L 236 267.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="117.5" y="262.5">Downscale cap</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="6.5" y="282.17">-downscale(idAccount:long,amount:int)</text></g><rect x="318.5" y="122" width="392" height="110" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 318.5 139.67 L 710.5 139.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="514" y="134.5">Save transaction</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="325" y="154.17">addTransaction(amount:int,date:Date,idSource:long,idDestination:long)</text></g><rect x="246" y="1" width="256" height="107" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 246 18.67 L 502 18.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="373.5" y="13.5">View cap</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="252.5" y="33.17">getBankCap(idAccount:long)</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="252.5" y="49.17">getAmount(idAccount:long)</text></g><rect x="720" y="122" width="214" height="107" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 720 139.67 L 934 139.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="826.5" y="134.5">Savings update</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="726.5" y="154.17">addFunds(idAccount:long,amount:int)</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="726.5" y="170.17">getAllSavingsAccounts()</text></g><rect x="835.5" y="1.5" width="285" height="104" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 835.5 19.17 L 1120.5 19.17" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="977.5" y="14">Upscale cap</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="842" y="33.67">upscale(idAccount:long,amount:int)</text></g><rect x="246" y="251" width="333" height="113" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 246 268.67 L 579 268.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="412" y="263.5">View Account</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="252.5" y="283.17">consultAccount(idAccount:long)</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="252.5" y="299.17">getTransactions(idAccount:long)</text></g><rect x="0" y="122" width="313" height="108" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 0 139.67 L 313 139.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="156" y="134.5">Manage profile</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="6.5" y="154.17">createProfile(mail:String,name:String, password:integer)</text></g><rect x="593" y="250" width="519" height="114" fill="#7acff5" stroke="#000000" pointer-events="none"/><path d="M 593 267.67 L 1112 267.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px"><text x="852" y="262.5">Update History</text></g><g fill="#000000" font-family="Helvetica" font-size="12px"><text x="599.5" y="282.17">addTransactionToHistory(amount:int,date:Date,idSource:long,idDestination:long)</text></g></g><g fill="#787878" font-family="Arial,Helvetica" font-size="12px"><text x="6" y="15">Visual Paradigm Online Express Edition</text></g></svg>
->>>>>>> Added deliverables
+<svg xmlns="http://www.w3.org/2000/svg" width="1128px" height="367px"
+     version="1.1" style="background-color: rgb(255, 255, 255);">
+    <defs>
+        <style type="text/css">ul { margin-top: 0px; margin-bottom: 10px } &#xa;ol { margin-top: 0px; margin-bottom:
+            10px } &#xa;ul { margin-top: 0px; margin-bottom: 10px } &#xa;ol { margin-top: 0px; margin-bottom: 10px }
+            &#xa;ul { margin-top: 0px; margin-bottom: 10px } &#xa;ol { margin-top: 0px; margin-bottom: 10px } &#xa;
+        </style>
+    </defs>
+    <g transform="translate(0.5,0.5)">
+        <rect x="529" y="0.5" width="286" height="105" fill="#7acff5" stroke="#000000" pointer-events="none"/>
+        <path d="M 529 18.17 L 815 18.17" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px">
+            <text x="671.5" y="13">Transfer Money</text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" font-size="12px">
+            <text x="535.5" y="32.67">pay(idSource:long,IdDestination:long,amount:int)</text>
+        </g>
+        <rect x="0" y="1" width="215" height="107" fill="#7acff5" stroke="#000000" pointer-events="none"/>
+        <path d="M 0 18.67 L 215 18.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px">
+            <text x="107" y="13.5">Create Account</text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" font-size="12px">
+            <text x="6.5" y="33.17">create(type:Type)</text>
+        </g>
+        <rect x="939" y="122" width="186" height="109" fill="#7acff5" stroke="#000000" pointer-events="none"/>
+        <path d="M 939 139.67 L 1125 139.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px">
+            <text x="1031.5" y="134.5">Check cap</text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" font-size="12px">
+            <text x="945.5" y="154.17">getCap(idAccount:long)</text>
+        </g>
+        <rect x="0" y="250" width="236" height="112" fill="#7acff5" stroke="#000000" pointer-events="none"/>
+        <path d="M 0 267.67 L 236 267.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px">
+            <text x="117.5" y="262.5">Downscale cap</text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" font-size="12px">
+            <text x="6.5" y="282.17">-downscale(idAccount:long,amount:int)</text>
+        </g>
+        <rect x="318.5" y="122" width="392" height="110" fill="#7acff5" stroke="#000000" pointer-events="none"/>
+        <path d="M 318.5 139.67 L 710.5 139.67" fill="none" stroke="#000000" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px">
+            <text x="514" y="134.5">Save transaction</text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" font-size="12px">
+            <text x="325" y="154.17">addTransaction(amount:int,date:Date,idSource:long,idDestination:long)</text>
+        </g>
+        <rect x="246" y="1" width="256" height="107" fill="#7acff5" stroke="#000000" pointer-events="none"/>
+        <path d="M 246 18.67 L 502 18.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px">
+            <text x="373.5" y="13.5">View cap</text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" font-size="12px">
+            <text x="252.5" y="33.17">getBankCap(idAccount:long)</text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" font-size="12px">
+            <text x="252.5" y="49.17">getAmount(idAccount:long)</text>
+        </g>
+        <rect x="720" y="122" width="214" height="107" fill="#7acff5" stroke="#000000" pointer-events="none"/>
+        <path d="M 720 139.67 L 934 139.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px">
+            <text x="826.5" y="134.5">Savings update</text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" font-size="12px">
+            <text x="726.5" y="154.17">addFunds(idAccount:long,amount:int)</text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" font-size="12px">
+            <text x="726.5" y="170.17">getAllSavingsAccounts()</text>
+        </g>
+        <rect x="835.5" y="1.5" width="285" height="104" fill="#7acff5" stroke="#000000" pointer-events="none"/>
+        <path d="M 835.5 19.17 L 1120.5 19.17" fill="none" stroke="#000000" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px">
+            <text x="977.5" y="14">Upscale cap</text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" font-size="12px">
+            <text x="842" y="33.67">upscale(idAccount:long,amount:int)</text>
+        </g>
+        <rect x="246" y="251" width="333" height="113" fill="#7acff5" stroke="#000000" pointer-events="none"/>
+        <path d="M 246 268.67 L 579 268.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px">
+            <text x="412" y="263.5">View Account</text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" font-size="12px">
+            <text x="252.5" y="283.17">consultAccount(idAccount:long)</text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" font-size="12px">
+            <text x="252.5" y="299.17">getTransactions(idAccount:long)</text>
+        </g>
+        <rect x="0" y="122" width="313" height="108" fill="#7acff5" stroke="#000000" pointer-events="none"/>
+        <path d="M 0 139.67 L 313 139.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px">
+            <text x="156" y="134.5">Manage profile</text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" font-size="12px">
+            <text x="6.5" y="154.17">createProfile(mail:String,name:String, password:integer)</text>
+        </g>
+        <rect x="593" y="250" width="519" height="114" fill="#7acff5" stroke="#000000" pointer-events="none"/>
+        <path d="M 593 267.67 L 1112 267.67" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" text-anchor="middle" font-size="12px">
+            <text x="852" y="262.5">Update History</text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" font-size="12px">
+            <text x="599.5" y="282.17">addTransactionToHistory(amount:int,date:Date,idSource:long,idDestination:long)
+            </text>
+        </g>
+    </g>
+</svg>
