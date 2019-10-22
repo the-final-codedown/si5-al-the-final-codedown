@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package capupdater;
+
+service CapUpdaterService {
+  rpc DownscaleCap(CapDownscale) returns (DownscaleResponse) {}
+}
+
+message CapDownscale {
+  int64 accountID = 1;
+  int32 delta = 2;
+}
+
+// Created a blank get request
+message GetRequest {}
+
+message DownscaleResponse {
+  bool accepted = 1;
+  CapDownscale downscale = 2;
+  repeated CapDownscale downscales = 3;
+}
