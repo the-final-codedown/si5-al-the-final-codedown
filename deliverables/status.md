@@ -6,11 +6,10 @@
 
 ## Health
 
-- Week 42 : yellow
-
-- Week 41 : green 
-
-- Week 40 : yellow
+- Week 43 : ![](green.png)
+- Week 42 : ![](yellow.png)
+- Week 41 : ![](green.png)
+- Week 40 : ![](yellow.png)
 
   
 ## Week 39
@@ -36,3 +35,15 @@
 - Changement dans l'architecture, création d'un composant monolithe.
   L'autre partie ayant un besoin de scalabilité sera implémenté en micro services.
 
+## Week 43
+
+- Création du micro-service Cap Updater en Go
+- Premier test Gatling sur Cap Updater
+- Mise sur Docker Compose du micro service Cap Updater
+- Dockerisation du monolithe Spring
+- Ajout d'un bus Kafka et du Rolling History
+
+
+## Week 44
+
+- 
