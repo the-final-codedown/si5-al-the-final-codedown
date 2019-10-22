@@ -4,9 +4,6 @@
 [submodule "tfc-cap-updater"]
 	path = tfc-cap-updater
 	url = https://github.com/the-final-codedown/tfc-cap-updater
-[submodule "tfc-cap-reader"]
-	path = tfc-cap-reader
-	url = https://github.com/the-final-codedown/tfc-cap-reader
 [submodule "tfc-savings"]
 	path = tfc-savings
 	url = https://github.com/the-final-codedown/tfc-savings
