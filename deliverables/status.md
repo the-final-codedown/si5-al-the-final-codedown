@@ -1,8 +1,4 @@
-<center>
 # Status
-</center>
-
-
 
 ## Health
 
