@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  micro:
+    command: api
+    image: microhq/micro:latest
+    ports:
+      - "8080:8080"
+    container_name: micro
+
+  cap:
+    image: tfc/tfc-cap-updater:latest
+    ports:
+      - "50051:50051"
+    environment:
+      - MICRO_SERVER_ADDRESS=:50051
+    container_name: tfc.cap
