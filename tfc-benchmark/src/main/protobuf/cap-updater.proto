@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package capupdater;
+package tfc.cap.updater;
 
 service CapUpdaterService {
   rpc DownscaleCap(CapDownscale) returns (DownscaleResponse) {}
