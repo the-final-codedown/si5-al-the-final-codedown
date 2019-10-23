@@ -3,7 +3,6 @@
 .mvn/
 mvnw
 mvnw.cmd
-pom.xml
-src/
+
 /tfc-profile/mvnw.cmd
 /tfc-profile/mvnw
