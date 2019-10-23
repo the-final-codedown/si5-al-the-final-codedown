@@ -8,6 +8,8 @@ services:
     ports:
     - "8080:8080"
     container_name: micro
+    networks:
+    - backend
 
   cap:
     image: tfc/tfc-cap-updater:latest
@@ -16,6 +18,8 @@ services:
     environment:
     - MICRO_SERVER_ADDRESS=:50051
     container_name: tfc.cap
+    networks:
+    - backend
   mongodb:
     image: mongo:3.2.4
     container_name: "mongodb"
@@ -27,7 +31,7 @@ services:
   app:
     build: tfc-profile/src/docker
     ports:
-    - 8080:8080
+    - 8081:8081
     links:
     - mongodb
     - zookeeper
@@ -77,7 +81,8 @@ services:
     - zookeeper
     - mongodb
     - broker
-    command: mongodb:27017 broker:29092 zookeeper:2181
+    - micro
+    command: mongodb:27017 broker:29092 zookeeper:2181 micro:8080
     networks:
     - backend
 networks:
