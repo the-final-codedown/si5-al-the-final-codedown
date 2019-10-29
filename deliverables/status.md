@@ -2,9 +2,14 @@
 
 ## Health
 
+- Week 44 : ![](green.png)
+
 - Week 43 : ![](green.png)
+
 - Week 42 : ![](yellow.png)
+
 - Week 41 : ![](green.png)
+
 - Week 40 : ![](yellow.png)
 
   
@@ -42,4 +47,6 @@
 
 ## Week 44
 
-- 
+- Mise en place de tests d'interfaces sur le module Spring
+- Tests de charge avec analyse des résultats sur le module Cap updater : recherches sur l'origine d'un bottleneck du côté de go (baisse des performances après 40 secondes de benchmark)
+- Suppression du framework go-micro du projet
