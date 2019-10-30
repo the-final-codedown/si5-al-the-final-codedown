@@ -28,9 +28,16 @@ class BasicItSimulation extends Simulation {
     .extract(_.accepted.some)(_ is true)
 
   val scn2 = scenario("Scenario Name") // A scenario is a chain of requests and pauses
-    .exec(request2)
+    .repeat(25) {
+      exec(request2)
+    }
+
   setUp(scn2.inject(
-    rampConcurrentUsers(1) to 100 during (60))
+    // atOnceUsers(1)) // 2
+
+    rampUsersPerSec(5) to 30 during (60), // 3
+    constantUsersPerSec(30) during (60)
+  ) // 4
     .protocols(grpcConf2))
 
 
