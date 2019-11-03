@@ -53,6 +53,15 @@
 						"type": "text"
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"origin\": \"5dbeedb0adbe1d0001c04061\",\n\t\"destination\": \"5dbeedb1adbe1d0001c04062\",\n\t\"amount\": 10,\n\t\"type\": \"CARD\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "http://localhost:50052/tfc.transfer.validator.TransferValidatorService/Pay?",
 					"protocol": "http",
@@ -67,12 +76,12 @@
 					"query": [
 						{
 							"key": "origin",
-							"value": "1",
+							"value": "5dbeedb0adbe1d0001c04061",
 							"disabled": true
 						},
 						{
 							"key": "destination",
-							"value": "0",
+							"value": "5dbeedb1adbe1d0001c04062",
 							"disabled": true
 						},
 						{
