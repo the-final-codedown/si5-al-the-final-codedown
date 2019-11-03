@@ -11,6 +11,19 @@ services:
     networks:
       - backend
 
+  transfer:
+    image: tfc/tfc-transfer-validator:latest
+    ports:
+      - 50052:50052
+    environment:
+      - SERVER_PORT=:50052
+      - DB_HOST=mongodb://mongo:27017
+    container_name: tfc.transfer
+    networks:
+      - backend
+    depends_on:
+      - mongo
+
   cap:
     image: tfc/tfc-cap-updater:latest
     ports:
@@ -36,8 +49,10 @@ services:
       - zookeeper
       - broker
     environment:
-      spring.data.mongodb.uri: mongodb://mongo:27017/account
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/account
       kafkabroker: broker:29092
+    networks:
+      - backend
     container_name: app
 
   zookeeper:

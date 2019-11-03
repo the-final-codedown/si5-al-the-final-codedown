@@ -17,7 +17,7 @@ class BasicItSimulation extends Simulation {
     .rpc(CapUpdaterServiceGrpc.METHOD_DOWNSCALE_CAP)
     .payload(CapDownscale.defaultInstance.updateExpr(
       _.accountID :~ "100",
-      _.delta :~ "10"
+      _.value :~ "10"
     ))
     .extract(_.accepted.some)(_ is true)
 

@@ -7,8 +7,8 @@ service CapUpdaterService {
 }
 
 message CapDownscale {
-  int64 accountID = 1;
-  int32 delta = 2;
+  string accountID = 1;
+  int32 value = 2;
 }
 
 // Created a blank get request
