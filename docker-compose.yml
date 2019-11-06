@@ -19,6 +19,7 @@ services:
       - SERVER_PORT=:50052
       - DB_HOST=mongodb://mongo:27017
       - CAP_SERVICE_ADDRESS=cap:50051
+      - KAFKA_HOST=broker:29092
     container_name: tfc.transfer
     networks:
       - backend
