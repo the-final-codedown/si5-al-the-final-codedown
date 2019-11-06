@@ -42,7 +42,7 @@ services:
   app:
     image: tfc/app
     ports:
-      - 8081:8080
+    - 8081:8081
     links:
       - mongo
       - zookeeper
