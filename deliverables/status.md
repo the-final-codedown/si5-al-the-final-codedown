@@ -2,6 +2,8 @@
 
 ## Health
 
+- Week 45 : ![](yellow.png) 
+
 - Week 44 : ![](green.png)
 
 - Week 43 : ![](green.png)
@@ -50,3 +52,12 @@
 - Mise en place de tests d'interfaces sur le module Spring
 - Tests de charge avec analyse des résultats sur le module Cap updater : recherches sur l'origine d'un bottleneck du côté de go (baisse des performances après 40 secondes de benchmark)
 - Suppression du framework go-micro du projet
+
+## Week 45 
+
+- Mise en place du module savings avec les tests
+- Ajout du pretty dump 
+- Ajout des consumer et producer kafka dans les services Go
+- Suppression des mocks du monolithe afin d'établir une communication avec les micro services en Go 
+- Création d'une team Postman afin de partager les requêtes
+- Walking Skeleton ready ! :)
