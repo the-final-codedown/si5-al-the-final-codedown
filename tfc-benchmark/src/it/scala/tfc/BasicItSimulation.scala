@@ -11,7 +11,7 @@ import tfc.cap.updater.tfc_cap_updater.{CapDownscale, CapUpdaterServiceGrpc, Dow
 
 class BasicItSimulation extends Simulation {
 
-  val grpcConf = grpc(ManagedChannelBuilder.forAddress("localhost", 50051).usePlaintext())
+  /*val grpcConf = grpc(ManagedChannelBuilder.forAddress("localhost", 50051).usePlaintext())
 
   val request: GrpcCallActionBuilder[CapDownscale, DownscaleResponse] = grpc("downscale")
     .rpc(CapUpdaterServiceGrpc.METHOD_DOWNSCALE_CAP)
@@ -27,11 +27,11 @@ class BasicItSimulation extends Simulation {
     }
 
   setUp(scn.inject(
-    atOnceUsers(1)) // 2
+    //atOnceUsers(0)) // 2
 
-    /*rampUsersPerSec(5) to 30 during (60),
+    rampUsersPerSec(5) to 30 during (60),
     constantUsersPerSec(30) during (60)
   )
-  */
-    .protocols(grpcConf))
+
+    .protocols(grpcConf))*/
 }

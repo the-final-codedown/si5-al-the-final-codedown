@@ -55,8 +55,8 @@
 
 ## Week 45 
 
-- Mise en place du module savings avec les tests
-- Ajout du pretty dump 
+- Mise en place du module *Savings* avec les tests
+- Ajout du *Pretty Dump* 
 - Ajout des consumer et producer kafka dans les services Go
 - Suppression des mocks du monolithe afin d'établir une communication avec les micro services en Go 
 - Création d'une team Postman afin de partager les requêtes

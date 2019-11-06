@@ -9,6 +9,7 @@ service CapUpdaterService {
 message CapDownscale {
   string accountID = 1;
   int32 value = 2;
+  int32 money = 3;
 }
 
 // Created a blank get request

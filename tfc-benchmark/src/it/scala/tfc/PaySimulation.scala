@@ -16,9 +16,9 @@ class PaySimulation extends Simulation {
   val request: GrpcCallActionBuilder[Transfer, TransferValidation] = grpc("pay")
     .rpc(TransferValidatorServiceGrpc.METHOD_PAY)
     .payload(Transfer.defaultInstance.updateExpr(
-      _.origin :~ "0",
-      _.destination :~ "1",
-      _.amount :~ "-10"
+      _.origin :~ "bank",
+      _.destination :~ "bank",
+      _.amount :~ "0"
     ))
     .extract(_.validated.some)(_ is true)
 
@@ -27,10 +27,10 @@ class PaySimulation extends Simulation {
 
 
   setUp(scn.inject(
-    atOnceUsers(1)
+    //atOnceUsers(10)
 
-    //rampUsersPerSec(5) to 30 during (60),
-    //constantUsersPerSec(30) during (60)
+    rampUsersPerSec(5) to 100 during (60),
+    constantUsersPerSec(100) during (60)
   )
     .protocols(grpcConf))
 
