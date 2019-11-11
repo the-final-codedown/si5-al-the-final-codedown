@@ -62,7 +62,8 @@
 - Ajout des consumer et producer kafka dans les services Go
 - Suppression des mocks du monolithe afin d'établir une communication avec les micro services en Go 
 - Création d'une team Postman afin de partager les requêtes
-- Walking Skeleton ready ! :)
 
 ## Week 46
- TODO
+
+- Ajout des requêtes Postman essentielles pour la démonstration
+- Walking Skeleton prêt
