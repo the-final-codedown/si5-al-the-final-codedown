@@ -66,4 +66,6 @@
 ## Week 46
 
 - Ajout des requêtes Postman essentielles pour la démonstration
+- Mise à jour du Pretty Dump pour être plus explicite sur le statut du système
+- Travail sur la démonstration (création des slides et répétition)
 - Walking Skeleton prêt
