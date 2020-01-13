@@ -2,6 +2,8 @@
 
 ## Health
 
+- Week 03 : ![](green.png)
+
 - Week 46 : ![](green.png)
 
 - Week 45 : ![](yellow.png) 
@@ -69,3 +71,8 @@
 - Mise à jour du Pretty Dump pour être plus explicite sur le statut du système
 - Travail sur la démonstration (création des slides et répétition)
 - Walking Skeleton prêt
+
+## Week 03
+
+- Design d'une nouvelle architecture orientée micro-service
+- Mise en place d'un cluster Kubernetes dans l'IBM Cloud
