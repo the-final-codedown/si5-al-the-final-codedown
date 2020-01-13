@@ -18,7 +18,7 @@
 
 - Week 40 : ![](yellow.png)
 
-  
+
 ## Week 39
 
 - Délimitation du scope
