@@ -175,6 +175,8 @@ Pour la version micro-service nous avons décidé de garder les micro-services e
 
 ![](micro.svg)
 
+<div style="page-break-after: always;"></div>
+
 ### Hybride
 
 Au niveau de l'architecture hybride, peu de changements sont envisagés.
