@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose.exe convert
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: cap
+  name: cap
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: cap
+    spec:
+      containers:
+      - env:
+        - name: DB_HOST
+          value: mongodb://mongo:27017
+        - name: SERVER_PORT
+          value: :50051
+        image: tfc/tfc-cap-updater:latest
+        name: tfc-cap
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 50051
+        resources: {}
+      restartPolicy: Always
+status: {}

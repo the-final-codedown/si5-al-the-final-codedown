@@ -1,0 +1,37 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose.exe convert
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: transfer
+  name: transfer
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: transfer
+    spec:
+      containers:
+      - env:
+        - name: CAP_SERVICE_ADDRESS
+          value: cap:50051
+        - name: DB_HOST
+          value: mongodb://mongo:27017
+        - name: KAFKA_HOST
+          value: broker:29092
+        - name: SERVER_PORT
+          value: :50052
+        image: tfc/tfc-transfer-validator:latest
+        imagePullPolicy: Never
+        name: tfc-transfer
+        ports:
+        - containerPort: 50052
+        resources: {}
+      restartPolicy: Always
+status: {}
