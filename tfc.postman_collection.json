@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "2f7c77b5-dce4-4e77-b97f-2cad95458309",
+		"name": "tfc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "tfc cap",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/grpc+json",
+						"type": "text"
+					},
+					{
+						"key": "Grpc-Insecure",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:50051/tfc.cap.updater.CapUpdaterService/DownscaleCap",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "50051",
+					"path": [
+						"tfc.cap.updater.CapUpdaterService",
+						"DownscaleCap"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tfc pay",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/grpc+json",
+						"type": "text"
+					},
+					{
+						"key": "Grpc-Insecure",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"origin\": \"5dbeedb0adbe1d0001c04061\",\n\t\"destination\": \"5dbeedb1adbe1d0001c04062\",\n\t\"amount\": 10,\n\t\"type\": \"CARD\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:50052/tfc.transfer.validator.TransferValidatorService/Pay?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "50052",
+					"path": [
+						"tfc.transfer.validator.TransferValidatorService",
+						"Pay"
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "5dbeedb0adbe1d0001c04061",
+							"disabled": true
+						},
+						{
+							"key": "destination",
+							"value": "5dbeedb1adbe1d0001c04062",
+							"disabled": true
+						},
+						{
+							"key": "amount",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "type",
+							"value": "CARD",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -2,17 +2,108 @@ version: '3'
 
 services:
 
-  micro:
-    command: api
-    image: microhq/micro:latest
+  mongo:
+    image: mongo:3.2.4
     ports:
-      - "8080:8080"
-    container_name: micro
+      - 27017:27017
+    command: --smallfiles
+    container_name: mongo
+    networks:
+      - backend
+
+  transfer:
+    image: tfc/tfc-transfer-validator:latest
+    ports:
+      - 50052:50052
+    environment:
+      - SERVER_PORT=:50052
+      - DB_HOST=mongodb://mongo:27017
+      - CAP_SERVICE_ADDRESS=cap:50051
+      - KAFKA_HOST=broker:29092
+    container_name: tfc.transfer
+    networks:
+      - backend
+    depends_on:
+      - mongo
 
   cap:
     image: tfc/tfc-cap-updater:latest
     ports:
-      - "50051:50051"
+      - 50051:50051
     environment:
-      - MICRO_SERVER_ADDRESS=:50051
+      - SERVER_PORT=:50051
+      - DB_HOST=mongodb://mongo:27017
     container_name: tfc.cap
+    networks:
+      - backend
+    depends_on:
+      - mongo
+
+  app:
+    image: tfc/app
+    ports:
+    - 8081:8081
+    links:
+      - mongo
+      - zookeeper
+      - broker
+    depends_on:
+      - zookeeper
+      - broker
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/account
+      kafkabroker: broker:29092
+    networks:
+      - backend
+    container_name: app
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:5.3.1
+    ports:
+      - 2181:2181
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - backend
+    container_name: zookeeper
+
+  broker:
+    image: confluentinc/cp-enterprise-kafka:5.3.1
+    ports:
+      - 29092:29092
+      - 9092:9092
+    links:
+      - zookeeper
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_CREATE_TOPICS: 'kafka-cap:1:1'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:29092,PLAINTEXT_HOST://127.0.0.1:9092
+      KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker:29092
+      CONFLUENT_METRICS_REPORTER_ZOOKEEPER_CONNECT: zookeeper:2181
+      CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 1
+      CONFLUENT_METRICS_ENABLE: 'true'
+      CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
+    networks:
+      - backend
+    container_name: broker
+
+  start_dependencies:
+    image: dadarek/wait-for-dependencies
+    depends_on:
+      - zookeeper
+      - mongo
+      - broker
+    command: mongo:27017 broker:29092 zookeeper:2181
+    networks:
+      - backend
+
+networks:
+  backend:
