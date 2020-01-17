@@ -4,6 +4,6 @@
 [submodule "tfc-cap-updater"]
 	path = tfc-cap-updater
 	url = https://github.com/the-final-codedown/tfc-cap-updater
-[submodule "tfc-profile"]
-	path = tfc-profile
-	url = https://github.com/the-final-codedown/tfc-profile
+[submodule "tfc-bank"]
+	path = tfc-bank
+	url = https://github.com/the-final-codedown/tfc-bank
