@@ -7,3 +7,15 @@
 [submodule "tfc-bank"]
 	path = tfc-bank
 	url = https://github.com/the-final-codedown/tfc-bank
+[submodule "tfc-savings"]
+	path = tfc-savings
+	url = https://github.com/the-final-codedown/tfc-savings.git
+[submodule "tfc-rolling-history"]
+	path = tfc-rolling-history
+	url = https://github.com/the-final-codedown/tfc-rolling-history.git
+[submodule "tfc-account"]
+	path = tfc-account
+	url = https://github.com/the-final-codedown/tfc-account.git
+[submodule "tfc-profile"]
+	path = tfc-profile
+	url = https://github.com/the-final-codedown/tfc-profile.git
