@@ -38,7 +38,17 @@ services:
       - backend
     depends_on:
       - mongo
-
+  profilesystem:
+    build: ./tfc-profile
+    ports:
+      - 8083:8083
+    tty: true
+    links:
+      - mongodb
+    environment:
+      - DB_HOST=mongo
+    networks:
+      - backend
   app:
     image: tfc/app
     ports:
