@@ -21,4 +21,4 @@
 	url = https://github.com/the-final-codedown/tfc-profile.git
 [submodule "tfc-tdd"]
 	path = tfc-tdd
-	url = ./tfc-tdd
+	url = https://github.com/the-final-codedown/tdd
