@@ -32,7 +32,8 @@ services:
       - 50051:50051
     environment:
       - SERVER_PORT=:50051
-      - DB_HOST=mongodb://mongo:27017
+      - DB_HOST=mongo
+      - DB_PORT=27017
     container_name: tfc.cap
     networks:
       - backend
