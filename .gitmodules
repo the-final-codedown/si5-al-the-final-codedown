@@ -22,3 +22,6 @@
 [submodule "tfc-tdd"]
 	path = tfc-tdd
 	url = https://github.com/the-final-codedown/tfc-tdd.git
+[submodule "tfc-dump"]
+	path = tfc-dump
+	url = https://github.com/the-final-codedown/tfc-dump
