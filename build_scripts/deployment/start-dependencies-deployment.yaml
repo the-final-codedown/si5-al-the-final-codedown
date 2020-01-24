@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose.exe convert
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: start-dependencies
+  name: start-dependencies
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: start-dependencies
+    spec:
+      containers:
+      - args:
+        - mongo:27017
+        - broker:29092
+        - zookeeper:2181
+        image: dadarek/wait-for-dependencies
+        name: start-dependencies
+        resources: {}
+      restartPolicy: Always
+status: {}
