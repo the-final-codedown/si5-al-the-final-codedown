@@ -17,8 +17,7 @@ services:
       - 50052:50052
     environment:
       - SERVER_PORT=:50052
-      - DB_HOST=mongo
-      - DB_PORT=27017
+      - DB_HOST=mongodb://mongo:27017
       - CAP_SERVICE_ADDRESS=cap:50051
       - KAFKA_HOST=broker:29092
     container_name: tfc.transfer
@@ -41,12 +40,30 @@ services:
     depends_on:
       - mongo
 
+  app:
+    image: tfc/app
+    ports:
+    - 8081:8081
+    links:
+      - mongo
+      - zookeeper
+      - broker
+    depends_on:
+      - zookeeper
+      - broker
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/account
+      kafkabroker: broker:29092
+    networks:
+      - backend
+    container_name: app
+
   zookeeper:
     image: confluentinc/cp-zookeeper:5.3.1
     ports:
-      - 2181:2181
+      - 9000:9000
     environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_CLIENT_PORT: 9000
       ZOOKEEPER_TICK_TIME: 2000
     networks:
       - backend
@@ -63,7 +80,7 @@ services:
       - zookeeper
     environment:
       KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:9000'
       KAFKA_CREATE_TOPICS: 'kafka-cap:1:1'
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:29092,PLAINTEXT_HOST://127.0.0.1:9092
@@ -71,7 +88,7 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
       CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: broker:29092
-      CONFLUENT_METRICS_REPORTER_ZOOKEEPER_CONNECT: zookeeper:2181
+      CONFLUENT_METRICS_REPORTER_ZOOKEEPER_CONNECT: zookeeper:9000
       CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 1
       CONFLUENT_METRICS_ENABLE: 'true'
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
@@ -85,7 +102,7 @@ services:
       - zookeeper
       - mongo
       - broker
-    command: mongo:27017 broker:29092 zookeeper:2181
+    command: mongo:27017 broker:29092 zookeeper:9000
     networks:
       - backend
 
