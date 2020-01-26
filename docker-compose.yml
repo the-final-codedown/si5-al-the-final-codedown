@@ -17,7 +17,8 @@ services:
       - 50052:50052
     environment:
       - SERVER_PORT=:50052
-      - DB_HOST=mongodb://mongo:27017
+      - DB_HOST=mongo
+      - DB_PORT=27017
       - CAP_SERVICE_ADDRESS=cap:50051
       - KAFKA_HOST=broker:29092
     container_name: tfc.transfer
@@ -39,34 +40,6 @@ services:
       - backend
     depends_on:
       - mongo
-  profilesystem:
-    build: ./tfc-profile
-    ports:
-      - 8083:8083
-    tty: true
-    links:
-      - mongodb
-    environment:
-      - DB_HOST=mongo
-    networks:
-      - backend
-  app:
-    image: tfc/app
-    ports:
-    - 8081:8081
-    links:
-      - mongo
-      - zookeeper
-      - broker
-    depends_on:
-      - zookeeper
-      - broker
-    environment:
-      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/account
-      kafkabroker: broker:29092
-    networks:
-      - backend
-    container_name: app
 
   zookeeper:
     image: confluentinc/cp-zookeeper:5.3.1
