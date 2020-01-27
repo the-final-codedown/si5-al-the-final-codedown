@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  app:
+    image: tfc/app
+    ports:
+    - 8081:8081
+    depends_on:
+      - zookeeper
+      - broker
+      - mongo
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/account
+      kafkabroker: broker:29092
+    networks:
+      - backend
+    container_name: app
+
+networks:
+  backend:

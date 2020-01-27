@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  profile:
+    build: ./tfc-profile
+    ports:
+      - 8083:8083
+    tty: true
+    environment:
+      - DB_HOST=mongo
+      - DB_PORT=27017
+    networks:
+      - backend
+
+networks:
+  backend:
