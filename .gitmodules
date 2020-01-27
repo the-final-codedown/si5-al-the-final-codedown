@@ -9,19 +9,19 @@
 	url = https://github.com/the-final-codedown/tfc-bank
 [submodule "tfc-savings"]
 	path = tfc-savings
-	url = https://github.com/the-final-codedown/tfc-savings.git
+	url = https://github.com/the-final-codedown/tfc-savings
 [submodule "tfc-rolling-history"]
 	path = tfc-rolling-history
-	url = https://github.com/the-final-codedown/tfc-rolling-history.git
+	url = https://github.com/the-final-codedown/tfc-rolling-history
 [submodule "tfc-account"]
 	path = tfc-account
-	url = https://github.com/the-final-codedown/tfc-account.git
+	url = https://github.com/the-final-codedown/tfc-account
 [submodule "tfc-profile"]
 	path = tfc-profile
-	url = https://github.com/the-final-codedown/tfc-profile.git
+	url = https://github.com/the-final-codedown/tfc-profile
 [submodule "tfc-tdd"]
 	path = tfc-tdd
-	url = https://github.com/the-final-codedown/tfc-tdd.git
+	url = https://github.com/the-final-codedown/tfc-tdd
 [submodule "tfc-dump"]
 	path = tfc-dump
 	url = https://github.com/the-final-codedown/tfc-dump
