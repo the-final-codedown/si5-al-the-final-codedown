@@ -9,6 +9,7 @@ services:
     depends_on:
       - zookeeper
       - broker
+      - mongo
     environment:
       SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/account
       kafkabroker: broker:29092
