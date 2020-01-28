@@ -2,6 +2,8 @@
 
 ## Health
 
+- Week 05 : ![](green.png)
+
 - Week 04 : ![](yellow.png)
 
 - Week 03 : ![](green.png)
@@ -42,13 +44,13 @@
 - Initialisation des repository et répartition des tâches au sein de l'équipe.
 - Début du développement, partage des connaissances sur Spring/Go pour bien débuter avec des mini démo sur certains composants de l'appli.
 - Changement dans l'architecture, création d'un composant monolithe.
-  L'autre partie ayant un besoin de scalabilité sera implémenté en micro services.
+  L'autre partie ayant un besoin de scalabilité sera implémenté en micro-services.
 
 ## Week 43
 
 - Création du micro-service Cap Updater en Go
 - Premier test Gatling sur Cap Updater
-- Mise sur Docker Compose du micro service Cap Updater
+- Mise sur Docker Compose du micro-service Cap Updater
 - Dockerisation du monolithe Spring
 - Ajout d'un bus Kafka et du Rolling History
 
@@ -64,7 +66,7 @@
 - Mise en place du module *Savings* avec les tests
 - Ajout du *Pretty Dump* 
 - Ajout des consumer et producer kafka dans les services Go
-- Suppression des mocks du monolithe afin d'établir une communication avec les micro services en Go 
+- Suppression des mocks du monolithe afin d'établir une communication avec les micro-services en Go 
 - Création d'une team Postman afin de partager les requêtes
 
 ## Week 46
@@ -80,6 +82,15 @@
 - Mise en place d'un cluster Kubernetes dans l'IBM Cloud
 
 ## Week 04
-- Mise en place d'une base du nouveau micro service Profile
-- Premier micro service du découpage du monolithe spring fonctionelle
+- Mise en place d'une base du nouveau micro-service Profile
+- Premier micro-service du découpage du monolithe spring fonctionnelle
 - Tests d'interface sur Profile 
+
+## Week 05
+
+- Mise en place de scripts de déploiements pour les deux architectures
+- Utilisation de docker pour la compilation des micro-services en go
+- Pretty dump mis dans un micro-service à part
+- Amélioration de la gestion d'erreurs en cas de compte inexistant pour le paiement
+- Correction de bug suite aux tests sur Profile
+- Création du micro-service Savings
