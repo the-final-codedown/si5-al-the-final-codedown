@@ -2,6 +2,8 @@
 
 ## Health
 
+- Week 04 : ![](yellow.png)
+
 - Week 03 : ![](green.png)
 
 - Week 46 : ![](green.png)
@@ -76,3 +78,8 @@
 
 - Design d'une nouvelle architecture orientée micro-service
 - Mise en place d'un cluster Kubernetes dans l'IBM Cloud
+
+## Week 04
+- Mise en place d'une base du nouveau micro service Profile
+- Premier micro service du découpage du monolithe spring fonctionelle
+- Tests d'interface sur Profile 
