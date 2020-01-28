@@ -93,3 +93,4 @@
 - Pretty dump mis dans un micro-service à part
 - Amélioration de la gestion d'erreurs en cas de compte inexistant pour le paiement
 - Correction de bug suite aux tests sur Profile
+- Création du micro-service Savings
