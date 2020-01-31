@@ -1,8 +1,35 @@
 version: '3'
 
 services:
-
+  account:
+    image: tfc/tfc-account
+    build: ./tfc-account
+    ports:
+      - 8081:8081
+    depends_on:
+      - zookeeper
+      - broker
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/account
+      - kafkabroker=broker:29092
+      - profile.host=profile:8083
+    networks:
+      - backend
+    container_name: tfc-account
+  dump:
+    image: tfc/tfc-dump
+    build: ./tfc-dump
+    ports:
+      - 8085:8085
+    tty: true
+    environment:
+      - DB_HOST=mongo
+      - DB_PORT=27017
+    networks:
+      - backend
+    container_name: tfc-dump
   profile:
+    image: tfc/tfc-profile
     build: ./tfc-profile
     ports:
       - 8083:8083
@@ -12,21 +39,9 @@ services:
       - DB_PORT=27017
     networks:
       - backend
-
-  account:
-      image: account
-      build: ./tfc-account
-      ports:
-        - 8081:8081
-      environment:
-        SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/account
-        kafkabroker: broker:29092
-      networks:
-        - backend
-      container_name: account
-
+    container_name: tfc-profile
   rollinghistory:
-    image: rollinghistory
+    image: tfc/tfc-rollinghistory
     build: ./tfc-rolling-history
     ports:
       - 8084:8084
@@ -35,10 +50,10 @@ services:
       kafkabroker: broker:29092
     networks:
       - backend
-    container_name: rollinghistory
+    container_name: tfc-rollinghistory
 
   savings:
-    image: savings
+    image: tfc/tfc-savings
     build: ./tfc-savings
     ports:
       - 8082:8082
@@ -47,7 +62,7 @@ services:
       kafkabroker: broker:29092
     networks:
       - backend
-    container_name: savings
+    container_name: tfc-savings
 
 networks:
   backend:
