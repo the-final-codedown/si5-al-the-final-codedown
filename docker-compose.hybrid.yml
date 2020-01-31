@@ -2,8 +2,9 @@ version: '3'
 
 services:
 
-  app:
-    image: tfc/app
+  bank:
+    image: tfc/tfc-bank
+    build: ./tfc-bank
     ports:
     - 8081:8081
     depends_on:
@@ -15,7 +16,7 @@ services:
       kafkabroker: broker:29092
     networks:
       - backend
-    container_name: app
+    container_name: tfc-bank
 
 networks:
   backend:

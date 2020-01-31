@@ -3,10 +3,9 @@ version: '3'
 services:
 
   mongo:
-    image: mongo:3.2.4
+    image: mongo:4.2.2-bionic
     ports:
       - 27017:27017
-    command: --smallfiles
     container_name: mongo
     networks:
       - backend
@@ -20,8 +19,9 @@ services:
       - DB_HOST=mongo
       - DB_PORT=27017
       - CAP_SERVICE_ADDRESS=cap:50051
+      - BANK_URI=tfc-bank:8081
       - KAFKA_HOST=broker:29092
-    container_name: tfc.transfer
+    container_name: tfc-transfer
     networks:
       - backend
     depends_on:
@@ -35,7 +35,7 @@ services:
       - SERVER_PORT=:50051
       - DB_HOST=mongo
       - DB_PORT=27017
-    container_name: tfc.cap
+    container_name: tfc-cap
     networks:
       - backend
     depends_on:
