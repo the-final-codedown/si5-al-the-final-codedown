@@ -13,5 +13,41 @@ services:
     networks:
       - backend
 
+  account:
+      image: account
+      build: ./tfc-account
+      ports:
+        - 8081:8081
+      environment:
+        SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/account
+        kafkabroker: broker:29092
+      networks:
+        - backend
+      container_name: account
+
+  rollinghistory:
+    image: rollinghistory
+    build: ./tfc-rolling-history
+    ports:
+      - 8084:8084
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/account
+      kafkabroker: broker:29092
+    networks:
+      - backend
+    container_name: rollinghistory
+
+  savings:
+    image: savings
+    build: ./tfc-savings
+    ports:
+      - 8082:8082
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/savings
+      kafkabroker: broker:29092
+    networks:
+      - backend
+    container_name: savings
+
 networks:
   backend:
