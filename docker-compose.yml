@@ -1,7 +1,42 @@
 version: '3'
 
 services:
-
+  account:
+    build: ./tfc-account
+    ports:
+      - 8081:8081
+    depends_on:
+      - zookeeper
+      - broker
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/account
+      - kafkabroker=broker:29092
+      - profile.host=profile:8083
+    networks:
+      - backend
+    container_name: account
+  dump:
+    build: ./tfc-dump
+    ports:
+      - 8085:8085
+    tty: true
+    environment:
+      - DB_HOST=mongo
+      - DB_PORT=27017
+    networks:
+      - backend
+    container_name: dump
+  profile:
+    build: ./tfc-profile
+    ports:
+      - 8083:8083
+    tty: true
+    environment:
+      - DB_HOST=mongo
+      - DB_PORT=27017
+    networks:
+      - backend
+    container_name: profile
   mongo:
     image: mongo:3.2.4
     ports:
@@ -10,37 +45,6 @@ services:
     container_name: mongo
     networks:
       - backend
-
-  transfer:
-    image: tfc/tfc-transfer-validator:latest
-    ports:
-      - 50052:50052
-    environment:
-      - SERVER_PORT=:50052
-      - DB_HOST=mongo
-      - DB_PORT=27017
-      - CAP_SERVICE_ADDRESS=cap:50051
-      - KAFKA_HOST=broker:29092
-    container_name: tfc.transfer
-    networks:
-      - backend
-    depends_on:
-      - mongo
-
-  cap:
-    image: tfc/tfc-cap-updater:latest
-    ports:
-      - 50051:50051
-    environment:
-      - SERVER_PORT=:50051
-      - DB_HOST=mongo
-      - DB_PORT=27017
-    container_name: tfc.cap
-    networks:
-      - backend
-    depends_on:
-      - mongo
-
   zookeeper:
     image: confluentinc/cp-zookeeper:5.3.1
     ports:
@@ -88,6 +92,29 @@ services:
     command: mongo:27017 broker:29092 zookeeper:2181
     networks:
       - backend
+  rollinghistory:
+    image: rollinghistory
+    build: ./tfc-rolling-history
+    ports:
+      - 8084:8084
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/account
+      kafkabroker: broker:29092
+    networks:
+      - backend
+    container_name: rollinghistory
+
+  savings:
+    image: savings
+    build: ./tfc-savings
+    ports:
+      - 8082:8082
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/savings
+      kafkabroker: broker:29092
+    networks:
+      - backend
+    container_name: savings
 
 networks:
   backend:
