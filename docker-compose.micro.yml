@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+
   account:
     image: tfc/tfc-account
     build: ./tfc-account
@@ -16,6 +17,7 @@ services:
     networks:
       - backend
     container_name: tfc-account
+
   dump:
     image: tfc/tfc-dump
     build: ./tfc-dump
@@ -28,6 +30,7 @@ services:
     networks:
       - backend
     container_name: tfc-dump
+
   profile:
     image: tfc/tfc-profile
     build: ./tfc-profile
@@ -40,6 +43,7 @@ services:
     networks:
       - backend
     container_name: tfc-profile
+    
   rollinghistory:
     image: tfc/tfc-rollinghistory
     build: ./tfc-rolling-history

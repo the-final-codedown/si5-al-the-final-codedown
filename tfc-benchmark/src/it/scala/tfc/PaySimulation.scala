@@ -18,7 +18,7 @@ class PaySimulation extends Simulation {
     .payload(Transfer.defaultInstance.updateExpr(
       _.origin :~ "bank",
       _.destination :~ "bank",
-      _.amount :~ "0"
+      _.amount :~ "1"
     ))
     .extract(_.validated.some)(_ is true)
 
@@ -29,8 +29,8 @@ class PaySimulation extends Simulation {
   setUp(scn.inject(
     //atOnceUsers(10)
 
-    rampUsersPerSec(5) to 100 during (60),
-    constantUsersPerSec(100) during (60)
+    rampUsersPerSec(5) to 50 during (60),
+    constantUsersPerSec(50) during (200)
   )
     .protocols(grpcConf))
 
