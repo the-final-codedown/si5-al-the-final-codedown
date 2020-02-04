@@ -94,3 +94,10 @@
 - Amélioration de la gestion d'erreurs en cas de compte inexistant pour le paiement
 - Correction de bug suite aux tests sur Profile
 - Création du micro-service Savings
+
+## Week 06
+
+- Création du micro-service RollingHistory 
+- Test de charge sur party changer par l'achitecture
+- Création de plusieurs scripts et docker-compose pour lancer les deux architectures
+-  plus de problème de concurrence au niveau des caps ? 
