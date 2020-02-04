@@ -99,5 +99,5 @@
 
 - Création du micro-service RollingHistory 
 - Test de charge sur party changer par l'achitecture
-- Création de plusieurs scripts et docker-compose pour lancer les deux architectures
--  plus de problème de concurrence au niveau des caps ? 
+- Création de scripts et docker-compose pour lancer les deux architectures
+- Plus de problème de concurrence au niveau des caps 
