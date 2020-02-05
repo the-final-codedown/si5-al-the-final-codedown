@@ -100,6 +100,6 @@
 ## Week 06
 
 - Création du micro-service RollingHistory pour mettre à jour la fenêtre glissante sur les 7 derniers jours pour chacun des comptes
-- Test de charge sur party changer par l'achitecture
+- Test de charge sur les parties impactées par la séparation en micro-services
 - Facilitation du déploiement d'une ou l'autre des architecture grâce à des scripts et de la composition de docker-compose
 - Correction d'un bug de concurrence à la première écriture des cap (duplication en base de données) 
