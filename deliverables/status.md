@@ -2,6 +2,8 @@
 
 ## Health
 
+- Week 06 : ![](yellow.png)
+
 - Week 05 : ![](green.png)
 
 - Week 04 : ![](yellow.png)
@@ -97,7 +99,7 @@
 
 ## Week 06
 
-- Création du micro-service RollingHistory 
+- Création du micro-service RollingHistory pour mettre à jour la fenêtre glissante sur les 7 derniers jours pour chacun des comptes
 - Test de charge sur party changer par l'achitecture
-- Création de scripts et docker-compose pour lancer les deux architectures
-- Plus de problème de concurrence au niveau des caps 
+- Facilitation du déploiement d'une ou l'autre des architecture grâce à des scripts et de la composition de docker-compose
+- Correction d'un bug de concurrence à la première écriture des cap (duplication en base de données) 
