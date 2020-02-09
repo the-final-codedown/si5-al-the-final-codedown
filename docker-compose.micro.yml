@@ -43,7 +43,7 @@ services:
     networks:
       - backend
     container_name: tfc-profile
-    
+
   rollinghistory:
     image: tfc/tfc-rollinghistory
     build: ./tfc-rolling-history
@@ -67,6 +67,10 @@ services:
     networks:
       - backend
     container_name: tfc-savings
+
+  transfer:
+    environment:
+      - BANK_URI=tfc-account:8081
 
 networks:
   backend:
