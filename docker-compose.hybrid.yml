@@ -7,10 +7,6 @@ services:
     build: ./tfc-bank
     ports:
     - 8081:8081
-    depends_on:
-      - zookeeper
-      - broker
-      - mongo
     environment:
       SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/tfc
       kafkabroker: broker:29092
