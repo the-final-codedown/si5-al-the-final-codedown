@@ -1,6 +1,7 @@
 #!/bin/bash
 
-[[ ! $1 ]] && echo Please provide the argument "micro" or "hybrid" && exit
-ARCH=$1
-
-docker-compose -f docker-compose.yml -f docker-compose."$ARCH".yml down
+if [[ $1 ]]; then
+  docker-compose -f docker-compose."$1".yml down
+else
+  docker-compose -f docker-compose.yml -f docker-compose.micro.yml -f docker-compose.hybrid.yml down
+fi
