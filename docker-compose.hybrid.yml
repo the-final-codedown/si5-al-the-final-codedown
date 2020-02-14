@@ -3,7 +3,7 @@ version: '3'
 services:
 
   bank:
-    image: tfc/tfc-bank
+    image: tfc/bank
     build: ./tfc-bank
     ports:
     - 8081:8081

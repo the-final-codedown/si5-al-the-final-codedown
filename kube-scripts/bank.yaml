@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bank
+spec:
+  selector:
+    matchLabels:
+      run: bank
+  template:
+    metadata:
+      labels:
+        run: bank
+    spec:
+      containers:
+        - image: localhost:5000/tfc/bank:latest
+          name: bank
+          env:
+            - name: SPRING_DATA_MONGODB_URI
+              value: mongodb://mongo:${MONGO_SERVICE_PORT}/tfc
+            - name: kafkabroker
+              value: broker:29092
+          ports:
+            - containerPort: 8081
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bank
+spec:
+  selector:
+    run: bank
+  ports:
+    - port: 8081
+
