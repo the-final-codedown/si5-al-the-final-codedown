@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transfer
+spec:
+  selector:
+    matchLabels:
+      run: transfer
+  template:
+    metadata:
+      labels:
+        run: transfer
+    spec:
+      containers:
+        - image: localhost:5000/tfc/transfer-validator:latest
+          name: tfc-transfer
+          env:
+            - name: CAP_SERVICE_ADDRESS
+              value: "cap:50051"
+            - name: DB_HOST
+              value: "mongo"
+            - name: DB_PORT
+              value: "27017"
+            - name: KAFKA_HOST
+              value: "broker:29092"
+            - name: SERVER_PORT
+              value: ":50052"
+            - name: BANK_URI
+              value: "bank:8081"
+          ports:
+            - containerPort: 50052
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: transfer
+spec:
+  ports:
+    - port: 50052
+  selector:
+    run: transfer

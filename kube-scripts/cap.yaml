@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cap
+
+spec:
+  selector:
+    matchLabels:
+      run: cap
+  template:
+    metadata:
+      labels:
+        run: cap
+    spec:
+      containers:
+        - image: localhost:5000/tfc/cap-updater:latest
+          name: tfc-cap
+          env:
+            - name: DB_HOST
+              value: "mongo"
+            - name: DB_PORT
+              value: "27017"
+            - name: SERVER_PORT
+              value: ":50051"
+          ports:
+            - containerPort: 50051
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cap
+spec:
+  selector:
+    run: cap
+  ports:
+    - port: 50051
