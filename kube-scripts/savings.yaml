@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: savings
+spec:
+  selector:
+    matchLabels:
+      run: savings
+  template:
+    metadata:
+      labels:
+        run: savings
+    spec:
+      containers:
+        - image: localhost:5000/tfc/savings:latest
+          name: savings
+          env:
+            - name: SPRING_DATA_MONGODB_URI
+              value: mongodb://mongo:${MONGO_SERVICE_PORT}/tfc
+            - name: kafkabroker
+              value: broker:29092
+          ports:
+            - containerPort: 8082
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: savings
+spec:
+  selector:
+    run: savings
+  ports:
+    - port: 8082
+
