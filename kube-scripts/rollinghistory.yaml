@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rolling-history
+spec:
+  selector:
+    matchLabels:
+      run: rolling-history
+  template:
+    metadata:
+      labels:
+        run: rolling-history
+    spec:
+      containers:
+        - image: localhost:5000/tfc/rolling-history:latest
+          name: rolling-history
+          env:
+            - name: SPRING_DATA_MONGODB_URI
+              value: mongodb://mongo:${MONGO_SERVICE_PORT}/tfc
+            - name: kafkabroker
+              value: broker:29092
+          ports:
+            - containerPort: 8084
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rolling-history
+spec:
+  selector:
+    run: rolling-history
+  ports:
+    - port: 8084
+

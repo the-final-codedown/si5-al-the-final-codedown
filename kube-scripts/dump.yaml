@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dump
+spec:
+  selector:
+    matchLabels:
+      run: dump
+  template:
+    metadata:
+      labels:
+        run: dump
+    spec:
+      containers:
+        - image: localhost:5000/tfc/dump:latest
+          name: dump
+          env:
+            - name: DB_HOST
+              value: "mongo"
+            - name: DB_PORT
+              value: "27017"
+          ports:
+            - containerPort: 8085
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dump
+spec:
+  selector:
+    run: dump
+  ports:
+    - port: 8085
+

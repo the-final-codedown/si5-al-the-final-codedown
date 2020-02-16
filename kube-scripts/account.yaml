@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: account
+spec:
+  selector:
+    matchLabels:
+      run: account
+  template:
+    metadata:
+      labels:
+        run: account
+    spec:
+      containers:
+        - image: localhost:5000/tfc/account:latest
+          name: account
+          env:
+            - name: SPRING_DATA_MONGODB_URI
+              value: mongodb://mongo:${MONGO_SERVICE_PORT}/tfc
+            - name: kafkabroker
+              value: broker:29092
+            - name: profile.host
+              value: profile:8083
+          ports:
+            - containerPort: 8081
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: account
+spec:
+  selector:
+    run: account
+  ports:
+    - port: 8081
+
