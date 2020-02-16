@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - image: localhost:5000/tfc/transfer-validator:latest
-          name: tfc-transfer
+          name: transfer
           env:
             - name: CAP_SERVICE_ADDRESS
               value: "cap:50051"

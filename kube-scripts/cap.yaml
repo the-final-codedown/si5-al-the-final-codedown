@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - image: localhost:5000/tfc/cap-updater:latest
-          name: tfc-cap
+          name: cap
           env:
             - name: DB_HOST
               value: "mongo"
