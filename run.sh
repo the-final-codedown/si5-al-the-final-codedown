@@ -4,5 +4,6 @@
 ARCH=$1
 
 docker-compose run --rm start_dependencies
+#sh database-restore.sh
 docker-compose -f docker-compose.yml -f docker-compose."$ARCH".yml up -d
-docker-compose logs -f
+docker-compose -f docker-compose.yml -f docker-compose."$ARCH".yml logs -f

@@ -2,6 +2,10 @@
 
 ## Health
 
+- Week 07 : ![](green.png)
+
+- Week 06 : ![](yellow.png)
+
 - Week 05 : ![](green.png)
 
 - Week 04 : ![](yellow.png)
@@ -94,3 +98,15 @@
 - Amélioration de la gestion d'erreurs en cas de compte inexistant pour le paiement
 - Correction de bug suite aux tests sur Profile
 - Création du micro-service Savings
+
+## Week 06
+
+- Création du micro-service RollingHistory pour mettre à jour la fenêtre glissante sur les 7 derniers jours pour chacun des comptes
+- Test de charge sur les parties impactées par la séparation en micro-services
+- Facilitation du déploiement d'une ou l'autre des architecture grâce à des scripts et de la composition de docker-compose
+- Correction d'un bug de concurrence à la première écriture des cap (duplication en base de données) 
+
+## Week 07
+
+- Uniformisation des schémas de base de données entre architecture micro et hybride
+- Uniformisation de certaines requêtes et réponses entre les deux architectures : un test identique fonctionnel sous les deux architectures.
