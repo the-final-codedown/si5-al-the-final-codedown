@@ -5,4 +5,4 @@ spec:
         - name: transfer
           env:
             - name: BANK_URI
-              value: "account:8081"
+              value: "bank:8081"
