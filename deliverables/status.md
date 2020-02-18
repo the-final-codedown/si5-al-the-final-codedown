@@ -2,6 +2,8 @@
 
 ## Health
 
+- Week 08 : ![](green.png)
+
 - Week 07 : ![](green.png)
 
 - Week 06 : ![](yellow.png)
@@ -110,3 +112,12 @@
 
 - Uniformisation des schémas de base de données entre architecture micro et hybride
 - Uniformisation de certaines requêtes et réponses entre les deux architectures : un test identique fonctionnel sous les deux architectures.
+
+## Week 08
+
+- Mise sur Kubernetes de l'architecture micro-services
+- Tests d'intégration fonctionnant sur les deux architectures (hybride et micro-services) sur docker-compose et sur Kubernetes
+- Adaptation des scripts de sauvegarde / restauration pour MongoDB sur Kubernetes
+- Ajout d'une CLI comme client
+- Mise à jour des scripts de CI pour la nouvelle architecture micro-services
+- Séparation des machines pour les tests Gatling : possibilité de faire tourner une des architecture sur une machine et exécuter les tests Gatling dessus depuis une autre

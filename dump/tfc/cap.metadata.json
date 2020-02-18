@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"tfc.cap"}],"uuid":"d9cfb2995a0240bab4f3e23f7239bf68"}

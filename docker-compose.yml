@@ -11,7 +11,7 @@ services:
       - backend
 
   transfer:
-    image: tfc/tfc-transfer-validator:latest
+    image: tfc/transfer-validator:latest
     ports:
       - 50052:50052
     environment:
@@ -19,7 +19,7 @@ services:
       - DB_HOST=mongo
       - DB_PORT=27017
       - CAP_SERVICE_ADDRESS=cap:50051
-      - BANK_URI=tfc-bank:8081
+      - BANK_URI=bank:8081
       - KAFKA_HOST=broker:29092
     container_name: tfc-transfer
     networks:
@@ -28,7 +28,7 @@ services:
       - mongo
 
   cap:
-    image: tfc/tfc-cap-updater:latest
+    image: tfc/cap-updater:latest
     ports:
       - 50051:50051
     environment:

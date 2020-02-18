@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: profile
+spec:
+  selector:
+    matchLabels:
+      run: profile
+  template:
+    metadata:
+      labels:
+        run: profile
+    spec:
+      containers:
+        - image: localhost:5000/tfc/profile:latest
+          name: profile
+          env:
+            - name: DB_HOST
+              value: "mongo"
+            - name: DB_PORT
+              value: "27017"
+          ports:
+            - containerPort: 8083
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: profile
+spec:
+  selector:
+    run: profile
+  ports:
+    - port: 8083
+
