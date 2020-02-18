@@ -1,9 +1,9 @@
 
-class BasicSimulation extends Simulation {
+class DumpSimulationMicro extends Simulation {
 
 
-  val scn: ScenarioBuilder = scenario("DumpScenario")
-    .exec(http("dump")
+  val scn: ScenarioBuilder = scenario("DumpScenario Micro")
+    .exec(http("dump micro")
       .get("http://localhost:8085/dump")
       .check(status is 200)
     )
