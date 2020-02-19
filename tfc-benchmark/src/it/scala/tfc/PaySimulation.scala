@@ -25,13 +25,13 @@ class PaySimulation extends Simulation {
   val scn: ScenarioBuilder = scenario("Basic Pay Simulation") // A scenario is a chain of requests and pauses
     .exec(request)
 
+  val users = 50
 
   setUp(scn.inject(
-    //atOnceUsers(10)
-
-    rampUsersPerSec(30) to 300 during (10),
-    constantUsersPerSec(300) during (50),
-    rampUsersPerSec(50) to 1000 during (20),
+    rampUsersPerSec(5) to users during (60),
+    constantUsersPerSec(users) during (120),
+    rampUsersPerSec(users) to (users * 2) during (120),
+    constantUsersPerSec(users * 2) during (120)
   )
     .protocols(grpcConf))
 

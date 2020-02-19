@@ -26,6 +26,7 @@ class ProfileCreationLoad extends Simulation {
   private val account_host: String = sys.env("ACCOUNT_HOST")
   private val account_port = Integer.parseInt(sys.env("ACCOUNT_PORT"));
   val grpcConf = grpc(ManagedChannelBuilder.forAddress(transfer_validator_host, transfer_validator_port).usePlaintext())
+
   val accountProvisioning: GrpcCallActionBuilder[Transfer, TransferValidation] = grpc("pay")
     .rpc(TransferValidatorServiceGrpc.METHOD_PAY)
     .payload(Transfer.defaultInstance.updateExpr(
@@ -34,10 +35,15 @@ class ProfileCreationLoad extends Simulation {
       _.amount :~ "100"
     ))
     .extract(_.validated.some)(_ is true)
+
   val feeder = Iterator.continually(Map("email" -> (Random.alphanumeric.take(20).mkString + "@foo.com")))
+
   val profileCreation_url = s"http://${profile_host}:${profile_port}/profiles"
+
   print(profileCreation_url)
+
   val accountCreation_url = s"http://${account_host}:${account_port}/accounts/" + "${email}/accounts"
+
   val profile_creation_request = http("Profile Creation")
     .post(profileCreation_url)
     .header(HttpHeaderNames.ContentType, HttpHeaderValues.ApplicationJson)
@@ -53,14 +59,12 @@ class ProfileCreationLoad extends Simulation {
     .exec(account_creation_request)
     .exec(accountProvisioning)
 
-  val constant = 400;
-  val low = 120;
-//  setUp(creation_scenario.inject(
-//    constantUsersPerSec(10) during (1),
-//  ).protocols(grpcConf))
+  val constant = 10;
+  val low = 5;
+
     setUp(
       creation_scenario.inject(
-        rampUsersPerSec(0) to constant during(30),
+        rampUsersPerSec(0) to constant during(60),
         constantUsersPerSec(constant) during(120),
         constantUsersPerSec(low) during(60),
         constantUsersPerSec(constant) during(120),
