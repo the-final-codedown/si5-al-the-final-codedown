@@ -61,6 +61,7 @@ services:
     environment:
       SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/tfc
       kafkabroker: broker:29092
+      account.host: tfc-account:8081
     networks:
       - backend
     container_name: tfc-savings
