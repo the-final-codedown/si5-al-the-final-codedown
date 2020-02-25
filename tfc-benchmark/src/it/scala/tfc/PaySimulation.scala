@@ -18,19 +18,20 @@ class PaySimulation extends Simulation {
     .payload(Transfer.defaultInstance.updateExpr(
       _.origin :~ "bank",
       _.destination :~ "bank",
-      _.amount :~ "1"
+      _.amount :~ "0"
     ))
     .extract(_.validated.some)(_ is true)
 
-  val scn: ScenarioBuilder = scenario("Scenario Name") // A scenario is a chain of requests and pauses
+  val scn: ScenarioBuilder = scenario("Basic Pay Simulation") // A scenario is a chain of requests and pauses
     .exec(request)
 
+  val users = 50
 
   setUp(scn.inject(
-    //atOnceUsers(10)
-
-    rampUsersPerSec(5) to 50 during (60),
-    constantUsersPerSec(50) during (200)
+    rampUsersPerSec(5) to users during (60),
+    constantUsersPerSec(users) during (120),
+    rampUsersPerSec(users) to (users * 2) during (120),
+    constantUsersPerSec(users * 2) during (120)
   )
     .protocols(grpcConf))
 

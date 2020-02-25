@@ -19,6 +19,8 @@ spec:
               value: mongodb://mongo:${MONGO_SERVICE_PORT}/tfc
             - name: kafkabroker
               value: broker:29092
+            - name: account.host
+              value: account:8081
           ports:
             - containerPort: 8082
       restartPolicy: Always
