@@ -1,4 +1,4 @@
-package tfc
+/*package tfc
 
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
@@ -20,4 +20,4 @@ class DumpSimulation extends Simulation {
       rampUsersPerSec(5) to 30 during (60),
       constantUsersPerSec(30) during (120),
     ))
-}
+}*/

@@ -2,6 +2,8 @@
 
 ## Health
 
+- Week 09 : ![](green.png)
+
 - Week 08 : ![](green.png)
 
 - Week 07 : ![](green.png)
@@ -121,3 +123,8 @@
 - Ajout d'une CLI comme client
 - Mise à jour des scripts de CI pour la nouvelle architecture micro-services
 - Séparation des machines pour les tests Gatling : possibilité de faire tourner une des architecture sur une machine et exécuter les tests Gatling dessus depuis une autre
+
+## Week 09
+
+- Préparation de la soutenance
+- Amélioration de la CLI
